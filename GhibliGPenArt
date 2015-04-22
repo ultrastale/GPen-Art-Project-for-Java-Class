@@ -1,0 +1,860 @@
+/*
+ * This file will draw a picture from the movie Spirited Away
+ * w/ Chihiro and Noface in it
+ * 
+ * @author Evan Torgrimson
+ * @date 4/13/15
+ * @file GhibliGPenArt.java
+ * 
+ */
+
+
+
+
+import java.awt.Color;
+import acm.program.*;
+import acm.graphics.*;
+
+
+public class GhibliGPenArt extends GraphicsProgram {
+	
+	
+	// class fields
+	private GPen pen;
+	
+	public final int APPLET_WIDTH = 550;
+	public final int APPLET_HEIGHT = 400; 
+	
+	public final Color BROWN = new Color(108, 61, 6); // I hope this is brown, really hard for me to tell.
+	
+	
+	
+	
+	// set up the state of the window
+	public void init() {
+		
+		setSize(APPLET_WIDTH, APPLET_HEIGHT); // set the initial window size 
+	}
+	
+
+	public void run() {
+		
+	
+		
+		// declare a variable for our GPen
+		// and initialized to a new GPen object
+		pen = new GPen();
+		add(pen);  // adds the pen object to our applet
+		
+		
+		// background color
+		pen.setFillColor(Color.ORANGE);  // set the background color to orange
+		pen.startFilledRegion(); // start the background fill
+		pen.drawLine(1100, 0);
+		pen.drawLine(0, 800);
+		pen.drawLine(-1100, 0);
+		pen.drawLine(0, -800);
+		pen.endFilledRegion(); // end the background fill
+		
+		
+		pen.setLocation(500, 200);  // This will change the x,y location of the entire drawing
+		 
+		
+		// Nofaces mask outline
+		pen.setFillColor(Color.WHITE); // make the mask white
+		pen.startFilledRegion();
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 80);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 100);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -45);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -105);
+		pen.endFilledRegion();
+		
+		
+		// Nofaces mask eyebrow
+		pen.setFillColor(Color.CYAN); // set the color of eyebrow to cyan
+		pen.startFilledRegion();
+		pen.move(20, 40);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, -10);
+		pen.endFilledRegion();
+		
+	
+		// Nofaces eye 
+		pen.setFillColor(Color.BLACK); // set the color of the eye to black
+		pen.startFilledRegion();
+		pen.move(10, 30);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, -20);
+		pen.endFilledRegion();
+		
+		
+		// Nofaces mask design
+		pen.setFillColor(Color.CYAN); // set the design color to cyan
+		pen.startFilledRegion();
+		pen.move(30, 60);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -25);
+		pen.endFilledRegion();
+		
+		
+		// Nofaces mouth
+		pen.setFillColor(Color.BLACK); // set mouth color to black
+		pen.startFilledRegion();
+		pen.move(15, 100);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.endFilledRegion();
+		
+		
+		// Shadow outline on mask
+		pen.setFillColor(Color.LIGHT_GRAY); // set shadow outline color to light gray
+		pen.startFilledRegion();
+		pen.move(5, -240);
+		pen.drawLine(0, 70);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 50);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, 50);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 50);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 60);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -100);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -80);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		
+		// Main body outline for noface
+		pen.setFillColor(Color.BLACK); // set the main body outline color to black
+		pen.startFilledRegion();
+		pen.move(-20, -30);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(40, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(0, 30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 60);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 60);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 80);
+		pen.drawLine(-400, 0);
+		pen.drawLine(0, -90);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -90);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -30);
+		
+		// Nofaces left arm
+		// no color change needed because it is attached to the main body
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-40, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-40, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-120, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-40, 0);
+		pen.drawLine(0, -5);
+		pen.drawLine(25, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(50, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(60, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(70, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(60, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -75);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -80);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		// Nofaces right arm
+		pen.setFillColor(Color.DARK_GRAY); // change right arm to dark gray to create depth
+		pen.startFilledRegion();
+		pen.move(150, 375);
+		pen.drawLine(-60, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-35, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-60, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-50, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(50, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(70, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(40, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(60, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		
+		
+		
+		// object outline in Nofaces hands
+		pen.setFillColor(Color.YELLOW); // set object color to yellow
+		pen.startFilledRegion();
+		pen.move(-280, 50);
+		pen.drawLine(-50, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-25, 0);
+		pen.drawLine(0, 5);
+		pen.drawLine(-5, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(30, 0);
+		pen.endFilledRegion();
+		
+		
+		
+		// chihiro's face outline
+		pen.setFillColor(Color.getHSBColor(28, 50, 72)); // set face color to resemble skin; very hard finding a color similar.
+		pen.startFilledRegion();
+		pen.move(-180, -150);
+		//pen.move(20, 40);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-55, 0);
+		pen.drawLine(0, 110);
+		pen.drawLine(45, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(35, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(-10, 0);
+	    pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.endFilledRegion();
+		
+		
+		
+		
+		// Chihiro's hair
+		pen.setFillColor(BROWN); // set hair color to brown
+		pen.startFilledRegion();
+		pen.move(-35, -40);
+		pen.drawLine(-70, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, 25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 45);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 45);  // around back end of the pony tail
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, -50);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(50, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);  // around the ear
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -25);
+		pen.drawLine(25, 0);
+		pen.drawLine(0, 25);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -70);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -5);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's eye
+		pen.setFillColor(Color.WHITE);  // set eye color to white
+		pen.startFilledRegion();
+		pen.move(25, 70);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		
+		
+		// Chihiro's cheek color
+		pen.setFillColor(Color.pink); // set cheek color to pink
+		pen.startFilledRegion();
+		pen.move(0, 20);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's hair tie
+		pen.setFillColor(Color.RED); // set hair tie color to red
+		pen.startFilledRegion();
+		pen.move(-135, -35);
+		pen.drawLine(0, -25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 25);
+		pen.drawLine(10, 0);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's main shirt
+		pen.setFillColor(Color.PINK); //set main shirt color to pink
+		pen.startFilledRegion();
+		pen.move(50, 120);
+		pen.drawLine(50, 0);
+		pen.drawLine(0, 15);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 25);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 150);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-120, 0); // bottom of shirt
+		pen.drawLine(0, -30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -95);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's second shirt color outline
+		pen.setFillColor(Color.RED); // set second color of Chihior's shirt to red
+		pen.startFilledRegion();
+		pen.drawLine(50, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-70, 0);
+		pen.drawLine(0, 70);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 50);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-120, 0);
+		pen.drawLine(0, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -25);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -95);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's white string
+		pen.setFillColor(Color.WHITE); // set string color to white
+		pen.startFilledRegion();
+		pen.move(0, 10);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 30);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-20, 0);
+		pen.drawLine(0, -40);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -80);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -5);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -25);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -15);
+		pen.endFilledRegion();
+		
+		
+		// second white string on shirt
+		pen.setFillColor(Color.WHITE); // set string color to white
+		pen.startFilledRegion();
+		pen.move(60, 50);
+		pen.drawLine(15, 0);
+		pen.drawLine(0, 60);
+		pen.drawLine(-15, 0);
+		pen.drawLine(0, -60);
+		pen.endFilledRegion();
+		
+		
+		// gray shirt sleeve
+		pen.setFillColor(Color.DARK_GRAY);  // set shirt sleeve to dark gray
+		pen.startFilledRegion();
+		pen.move(15, 60);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-30, 0);
+		pen.drawLine(0, -20);
+		pen.drawLine(30, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(30, 0);
+		pen.endFilledRegion();
+		
+		
+		// Chihiro's arm
+		pen.setFillColor(Color.getHSBColor(28, 50, 72)); // set arm to skin color. same as face color
+		pen.startFilledRegion();
+		pen.move(-20, 20);
+		pen.drawLine(0, 30);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -15);
+		pen.drawLine(20, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -50);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, 40);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 20);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, 10);
+		pen.drawLine(-40, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(-10, 0);
+		pen.drawLine(0, -45);
+		pen.drawLine(10, 0);
+		pen.drawLine(0, -10);
+		pen.drawLine(10, 0);
+		pen.endFilledRegion();
+		
+		
+		// bottom rectangle on shirt
+		pen.setFillColor(Color.darkGray); // set bottom rectangle on shirt to dark gray
+		pen.startFilledRegion();
+		pen.move(-20, 85);
+		pen.drawLine(0, 15);
+		pen.drawLine(-40, 0);
+		pen.drawLine(0, -15);
+		pen.endFilledRegion();
+		
+		pen.scale(0.5, 0.5);
+		
+		
+	} // end of run()
+	
+} // end class
